@@ -1,16 +1,13 @@
-# 오큰수
+#오큰수 - 17298번
 N = int(input())
+num = list(map(int,input().split()))
+stack = []
+answer = [-1] * N
 
 for i in range(N):
-    stack = []
-    result = []
-    num = list(map(int, input().split()))
-    for j in range(N):
-        while stack and stack[-1][0] < num[j]:
-            result.append(str(num[j]))
-            stack.pop()
-        stack.append((num[j], j))
-    while stack:
-        result.append('-1')
-        stack.pop()
-    print(' '.join(result))
+    while stack and num[stack[-1]] < num[i]:
+        idx = stack.pop()
+        answer[idx] = num[i]
+    stack.append(i)
+
+print(' '.join(map(str,answer)))
