@@ -5,7 +5,6 @@ input = sys.stdin.readline
 
 N = int(input())
 q = deque()
-
 result = []
 
 for i in range(N):
@@ -24,4 +23,3 @@ for i in range(N):
         result.append(q[-1] if q else '-1')
 
 print('\n'.join(result))
-
