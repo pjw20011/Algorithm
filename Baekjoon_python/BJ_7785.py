@@ -12,4 +12,3 @@ for i in range(N):
 result = sorted(people.keys(), reverse=True)
 
 print('\n'.join(result))
-
